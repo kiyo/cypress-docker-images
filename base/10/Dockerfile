@@ -1,4 +1,4 @@
-FROM node:10.0
+FROM node:10.11
 
 RUN apt-get update && \
   apt-get install -y \
@@ -10,8 +10,8 @@ RUN apt-get update && \
     libasound2 \
     xvfb
 
-RUN npm i -g npm@6
-
 # versions of local tools
 RUN node -v
+# NPM version should already be pretty new (> 6.4.0)
 RUN npm -v
+RUN yarn -v
